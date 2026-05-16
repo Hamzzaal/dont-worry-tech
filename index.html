@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Don't Worry Tech | خدمات أكاديمية وتقنية احترافية</title>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <!-- TailwindCSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-dark-bg text-white">
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-dark-bg/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
+                Don't Worry <span class="text-white">Tech</span>
+            </div>
+            
+            <div class="hidden md:flex space-x-8 space-x-reverse">
+                <a href="#home" class="nav-link hover:text-cyan-400 transition">الرئيسية</a>
+                <a href="#services" class="nav-link hover:text-cyan-400 transition">الخدمات</a>
+                <a href="#tech" class="nav-link hover:text-cyan-400 transition">التقنيات</a>
+                <a href="#whyus" class="nav-link hover:text-cyan-400 transition">لماذا نحن</a>
+                <a href="#contact" class="nav-link hover:text-cyan-400 transition">تواصل</a>
+            </div>
+            
+            <button class="md:hidden text-white text-2xl" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark-bg/95 backdrop-blur-md py-4">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="#home" class="mobile-link">الرئيسية</a>
+                <a href="#services" class="mobile-link">الخدمات</a>
+                <a href="#tech" class="mobile-link">التقنيات</a>
+                <a href="#whyus" class="mobile-link">لماذا نحن</a>
+                <a href="#contact" class="mobile-link">تواصل</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-transparent to-cyan-900/20"></div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <div class="hero-badge mb-6 inline-block">
+                <span class="px-4 py-2 bg-white/10 backdrop-blur-sm rounded-full text-sm">
+                    🔥 لا تشيل هم | نحن هنا
+                </span>
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-bold mb-6">
+                <span class="gradient-text">ننجز</span> مشاريعك
+                <br>وأنت <span class="gradient-text">مرتاح</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                خدمات أكاديمية وتقنية احترافية لجميع التخصصات - جودة عالية، سرعة فائقة، وأسعار تنافسية
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('services')" class="btn-primary px-8 py-4 rounded-full text-lg font-semibold">
+                    اطلب خدمتك الآن <i class="fas fa-arrow-left mr-2"></i>
+                </button>
+                <button onclick="scrollToSection('contact')" class="btn-secondary px-8 py-4 rounded-full text-lg font-semibold">
+                    تواصل معنا <i class="fab fa-telegram mr-2"></i>
+                </button>
+            </div>
+            
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20">
+                <div class="stat-card">
+                    <div class="text-3xl font-bold text-cyan-400">500+</div>
+                    <div class="text-gray-400">مشروع منجز</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-3xl font-bold text-cyan-400">100%</div>
+                    <div class="text-gray-400">رضا العملاء</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-3xl font-bold text-cyan-400">24/7</div>
+                    <div class="text-gray-400">دعم مستمر</div>
+                </div>
+                <div class="stat-card">
+                    <div class="text-3xl font-bold text-cyan-400">50+</div>
+                    <div class="text-gray-400">خبير تقني</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i class="fas fa-chevron-down text-2xl text-cyan-400"></i>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark-bg/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">خدماتنا <span class="gradient-text">الاحترافية</span></h2>
+                <p class="text-gray-400 text-lg">نقدم لك كل ما تحتاجه في مكان واحد</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="0">
+                    <div class="service-icon">
+                        <i class="fas fa-code text-4xl text-cyan-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">المشاريع البرمجية</h3>
+                    <p class="text-gray-400 mb-4">تنفيذ مشاريع البرمجة بجميع اللغات وبأعلى جودة</p>
+                    <div class="tech-tags">
+                        <span>Python</span>
+                        <span>Java</span>
+                        <span>C++</span>
+                        <span>PHP</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 2 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-icon">
+                        <i class="fas fa-tasks text-4xl text-purple-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">الواجبات والتكليفات</h3>
+                    <p class="text-gray-400 mb-4">حل الواجبات الأكاديمية بدقة واحترافية</p>
+                    <div class="tech-tags">
+                        <span>تقارير</span>
+                        <span>أبحاث</span>
+                        <span>عروض</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 3 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt text-4xl text-green-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">الأمن السيبراني</h3>
+                    <p class="text-gray-400 mb-4">خدمات أمنية متكاملة وتحليل شبكات</p>
+                    <div class="tech-tags">
+                        <span>اختبار اختراق</span>
+                        <span>تحليل</span>
+                        <span>حماية</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-icon">
+                        <i class="fas fa-database text-4xl text-yellow-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">قواعد البيانات</h3>
+                    <p class="text-gray-400 mb-4">تصميم وربط قواعد البيانات بكفاءة</p>
+                    <div class="tech-tags">
+                        <span>SQL</span>
+                        <span>MySQL</span>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 5 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line text-4xl text-red-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">تحليل البيانات</h3>
+                    <p class="text-gray-400 mb-4">تحليل البيانات واستخراج الرؤى القيمة</p>
+                    <div class="tech-tags">
+                        <span>AI</span>
+                        <span>Machine Learning</span>
+                        <span>Statistics</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 6 -->
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-icon">
+                        <i class="fas fa-graduation-cap text-4xl text-pink-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">مشاريع التخرج</h3>
+                    <p class="text-gray-400 mb-4">إشراف كامل على مشاريع التخرج</p>
+                    <div class="tech-tags">
+                        <span>توثيق</span>
+                        <span>تنفيذ</span>
+                        <span>شرح</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="tech" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">نعمل بأحدث <span class="gradient-text">التقنيات</span></h2>
+                <p class="text-gray-400 text-lg">أدوات وتقنيات عصرية لضمان أفضل النتائج</p>
+            </div>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <div class="tech-item" data-aos="flip-left"><i class="fab fa-python text-5xl text-blue-400"></i><span class="block mt-2">Python</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="50"><i class="fab fa-java text-5xl text-red-400"></i><span class="block mt-2">Java</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="100"><i class="fas fa-code text-5xl text-blue-600"></i><span class="block mt-2">C++</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="150"><i class="fab fa-php text-5xl text-purple-400"></i><span class="block mt-2">PHP</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="200"><i class="fab fa-html5 text-5xl text-orange-500"></i><span class="block mt-2">HTML5</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="250"><i class="fab fa-css3-alt text-5xl text-blue-500"></i><span class="block mt-2">CSS3</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="300"><i class="fab fa-js text-5xl text-yellow-400"></i><span class="block mt-2">JavaScript</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="350"><i class="fas fa-database text-5xl text-green-400"></i><span class="block mt-2">SQL</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="400"><i class="fab fa-react text-5xl text-cyan-400"></i><span class="block mt-2">React</span></div>
+                <div class="tech-item" data-aos="flip-left" data-aos-delay="450"><i class="fab fa-node text-5xl text-green-500"></i><span class="block mt-2">Node.js</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="whyus" class="py-24 bg-dark-bg/50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">لماذا <span class="gradient-text">نحن؟</span></h2>
+                <p class="text-gray-400 text-lg">مميزات لا تجدها في أي مكان آخر</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="why-card" data-aos="zoom-in">
+                    <div class="why-icon"><i class="fas fa-lock text-4xl text-cyan-400"></i></div>
+                    <h3 class="text-xl font-bold mb-2">خصوصية وسرية تامة</h3>
+                    <p class="text-gray-400">بياناتك في أمان تام معنا</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="why-icon"><i class="fas fa-clock text-4xl text-purple-400"></i></div>
+                    <h3 class="text-xl font-bold mb-2">التزام بالمواعيد</h3>
+                    <p class="text-gray-400">نسلم قبل الموعد المتفق عليه</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="why-icon"><i class="fas fa-gem text-4xl text-pink-400"></i></div>
+                    <h3 class="text-xl font-bold mb-2">جودة عالية</h3>
+                    <p class="text-gray-400">دقة واحترافية في التنفيذ</p>
+                </div>
+                <div class="why-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="why-icon"><i class="fas fa-wallet text-4xl text-green-400"></i></div>
+                    <h3 class="text-xl font-bold mb-2">أسعار مناسبة</h3>
+                    <p class="text-gray-400">تنافسية ومناسبة للطلاب</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4">تواصل <span class="gradient-text">معنا</span></h2>
+                <p class="text-gray-400 text-lg">نحن هنا لمساعدتك 24 ساعة طوال أيام الأسبوع</p>
+            </div>
+            
+            <div class="max-w-2xl mx-auto">
+                <div class="contact-card text-center p-8 rounded-2xl" data-aos="fade-up">
+                    <div class="telegram-icon mb-6">
+                        <i class="fab fa-telegram text-6xl text-blue-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">راسلنا على تيليجرام</h3>
+                    <p class="text-gray-300 mb-6">للحصول على استشارة مجانية أو طلب خدمة</p>
+                    
+                    <a href="https://t.me/Donot_Worry_Tech" target="_blank" class="telegram-btn inline-flex items-center gap-3 px-8 py-4 rounded-full text-lg font-semibold">
+                        <i class="fab fa-telegram text-2xl"></i>
+                        @Donot_Worry_Tech
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    
+                    <div class="mt-8 pt-8 border-t border-white/10">
+                        <p class="text-gray-400">أو تواصل عبر البريد الإلكتروني</p>
+                        <a href="mailto:info@dontworrytech.com" class="text-cyan-400 hover:text-cyan-300">info@dontworrytech.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="text-2xl font-bold mb-4">
+                <span class="gradient-text">Don't Worry Tech</span>
+            </div>
+            <p class="text-gray-400 mb-4">نحن هنا لنجاحك الأكاديمي والمهني 🚀</p>
+            <div class="flex justify-center gap-6 mb-6">
+                <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                <a href="https://t.me/Donot_Worry_Tech" class="social-icon"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p class="text-gray-500 text-sm">© 2026 Don't Worry Tech. جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
