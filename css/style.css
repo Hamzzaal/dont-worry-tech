@@ -1,0 +1,305 @@
+/* Custom Styles */
+:root {
+    --primary-cyan: #00d2ff;
+    --primary-pink: #ff0066;
+    --primary-purple: #7928ff;
+    --dark-bg: #0a0f1f;
+    --darker-bg: #060a14;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-bg);
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, var(--primary-cyan), var(--primary-pink));
+    border-radius: 10px;
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-cyan);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.1s ease;
+}
+
+.cursor-follower {
+    width: 30px;
+    height: 30px;
+    border: 2px solid var(--primary-cyan);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.2s ease;
+}
+
+/* Gradient Text */
+.gradient-text {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink), var(--primary-purple));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-pink));
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
+}
+
+.btn-secondary {
+    border: 2px solid var(--primary-cyan);
+    background: transparent;
+    color: var(--primary-cyan);
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-cyan);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Service Cards */
+.service-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,210,255,0.1), transparent);
+    transition: left 0.5s;
+}
+
+.service-card:hover::before {
+    left: 100%;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: rgba(0,210,255,0.3);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.service-icon {
+    width: 70px;
+    height: 70px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.service-card:hover .service-icon {
+    transform: rotate(360deg) scale(1.1);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tech-tags span {
+    background: rgba(0,210,255,0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: var(--primary-cyan);
+}
+
+/* Tech Items */
+.tech-item {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.tech-item:hover {
+    transform: translateY(-5px) scale(1.05);
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 30px rgba(0,210,255,0.2);
+}
+
+/* Why Cards */
+.why-card {
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.why-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-pink);
+    box-shadow: 0 10px 30px rgba(255,0,102,0.1);
+}
+
+.why-icon {
+    margin-bottom: 20px;
+}
+
+/* Stat Cards */
+.stat-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.02);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    background: rgba(255,255,255,0.05);
+    transform: scale(1.05);
+}
+
+/* Contact Card */
+.contact-card {
+    background: linear-gradient(135deg, rgba(0,210,255,0.1), rgba(255,0,102,0.05));
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0,210,255,0.2);
+}
+
+.telegram-btn {
+    background: linear-gradient(135deg, #0088cc, #004d66);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.telegram-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0,136,204,0.5);
+}
+
+/* Social Icons */
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.social-icon:hover {
+    background: var(--primary-cyan);
+    transform: translateY(-3px);
+}
+
+/* Nav Links */
+.nav-link, .mobile-link {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-cyan), var(--primary-pink));
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-badge {
+        font-size: 14px;
+    }
+    
+    .stat-card {
+        padding: 10px;
+    }
+    
+    .stat-card .text-3xl {
+        font-size: 1.5rem;
+    }
+}
+
+/* Loading Animation */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Glow Effect */
+.glow {
+    animation: pulse 2s infinite;
+}
